@@ -1,0 +1,80 @@
+.searchNav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-decoration: none;
+    background-color: aliceblue;
+    margin-top: 0;
+    border-radius: 5px;
+    padding-left: 0;
+    justify-content: center;
+    padding: 20px 20px;
+    color: red;
+    font-family: Montserrat;
+    color: steelblue;
+    font-weight: 700;
+}
+
+.input {
+   display: flex;
+   margin: 0 auto;
+   font-size: 24px;
+   font-family: Montserrat;
+   outline: none;
+   border: none;
+   background-image: url("../../Images/background.png");
+   background-position: center;
+   border-radius: 10px;
+   padding: 15px 10px;
+   color: white;
+   -webkit-box-shadow: 0px 25px 54px 1px rgba(219,90,219,1);
+    -moz-box-shadow: 0px 25px 54px 1px rgba(219,90,219,1);
+    box-shadow: 0px 25px 54px 1px rgba(219,90,219,1);
+}
+
+.searchTitle {
+    text-align: center;
+    font-family: Montserrat;
+    color: white;
+    font-size: 36px;
+}
+
+.searchList {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.searchListItem {
+    text-align: center;
+    width: 280px;
+    padding-right: 26px;
+    color: white;
+    font-family: Montserrat;
+    height: 600px;
+    overflow: hidden;
+    font-size: 12px;
+    transition: .3s ease-in-out;
+}
+
+.searchImg {
+    width: 240px;
+    height: 360px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.searchImg:hover {
+    transform: scale(1.07);
+}
+
+.searchListItem:hover {
+    color: yellow;
+    transition: .3s ease-in-out;
+}
+/* .searchListItem::-webkit-scrollbar { width: 0; } */

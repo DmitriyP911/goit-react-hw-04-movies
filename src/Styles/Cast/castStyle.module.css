@@ -1,0 +1,61 @@
+.castWrap {
+    margin: 0 auto;
+    font-family: Montserrat;
+    color: white;
+}
+
+.castTitle {
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 700;
+    color: white;
+}
+
+.castPoster {
+    display: flex;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.castGenres {
+    margin: 0 auto;
+    margin-top: 20px;
+    color: tomato;
+    font-weight: 700;
+    width: 480px;
+}
+
+.castGenresList {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.castCompanies {
+    text-align: center;
+    color: tomato;
+    font-weight: 700;
+}
+
+.castCompaniesImg {
+    width: 180px;
+    height: 60px;
+}
+
+.castCompaniesList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.castCompaniesListItem {
+    width: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
+    flex-wrap: wrap;
+    max-width: 200px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid tomato;
+}
