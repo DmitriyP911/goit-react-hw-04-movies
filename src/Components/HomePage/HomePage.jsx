@@ -39,7 +39,9 @@ export default class HomePage extends Component {
                             return (
                                 <li className={Styles.homepageListItem} key={shortId.generate()}>
                                     <NavLink activeClassName={Styles.navHover} to={`/movies/${film.id}`}>
-                                        <img className={Styles.homepagePoster} src={`${IMG_URL}${film.poster_path}`} alt="" />
+                                        <img className={Styles.homepagePoster}
+                                            src={`${IMG_URL}${film.poster_path}`}
+                                            alt="" />
                                         <p>{film.original_title}</p>
                                     </NavLink>
                                 </li>

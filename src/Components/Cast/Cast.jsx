@@ -62,8 +62,8 @@ export default class Cast extends Component {
                     {
                         prodCompanies.map( company => {
                             return (
-                                <li
-                                    className={Styles.castCompaniesListItem} key={company.id}>
+                                <li className={Styles.castCompaniesListItem}
+                                    key={company.id}>
                                     <p>{company.name}</p>
                                     {
                                         company.logo_path !== null &&
@@ -77,7 +77,7 @@ export default class Cast extends Component {
                         } )
                     }
                 </ul>
-                <p>Release: {film.release_date}</p>
+                <p className={Styles.release}><span>Release: </span>{film.release_date}</p>
             </div>
         )
     }

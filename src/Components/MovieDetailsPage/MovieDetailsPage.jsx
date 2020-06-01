@@ -37,9 +37,14 @@ export default class MovieDetailsPage extends Component {
             <div>
                 <NavLink activeClassName={Styles.moviePageNav} to="/"> Home </NavLink>
                 <h2 className={Styles.movieTitle}>{film.original_title}</h2>
-                <img className={Styles.moviePoster} src={`${IMG_URL}${film.poster_path}`} alt="" />
+                <img className={Styles.moviePoster}
+                    src={`${IMG_URL}${film.poster_path}`}
+                    alt="" />
                 <div className={Styles.movieLinks}>
-                    <a href={film.homepage} target="_blank" rel="noopener noreferrer">You can watch this movie in official cite</a>
+                    <a
+                        href={film.homepage}
+                        target="_blank"
+                        rel="noopener noreferrer">You can watch this movie in official cite</a>
                     <NavLink to={`/movies/${film.id}/reviews`} >Get film information</NavLink>
                     <NavLink to={`/movies/${film.id}/cast`} >Get production information</NavLink>
                 </div>

@@ -59,3 +59,11 @@
     padding-bottom: 15px;
     border-bottom: 1px solid tomato;
 }
+
+.release {
+    margin-top: 40px;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 700;
+    margin-bottom: 30px;
+}

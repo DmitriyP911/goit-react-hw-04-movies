@@ -21,11 +21,16 @@ export default class MoviePage extends Component {
             <div>
                 <Suspense fallback={<h1>Loading...</h1>}>
                     <Switch>
-                        <Route path="/" exact component={HomePage} />
-                        <Route path="/movies/:movieId/cast" component={Cast} />
-                        <Route path="/movies/:movieId/reviews" component={Reviews} />
-                        <Route path="/movies/:movieId" component={AsyncMovieDetailsPage} />
-                        <Route path="/movies" exact component={MoviePageSearch} />
+                        <Route path="/"
+                            exact component={HomePage} />
+                        <Route path="/movies/:movieId/cast"
+                            component={Cast} />
+                        <Route path="/movies/:movieId/reviews"
+                            component={Reviews} />
+                        <Route path="/movies/:movieId"
+                            component={AsyncMovieDetailsPage} />
+                        <Route path="/movies"
+                            component={MoviePageSearch} />
                     </Switch>
                 </Suspense>
             </div>

@@ -15,9 +15,7 @@ export default class Reviews extends Component {
         getFilmInfo( filmId )
             .then( movie => {
                 const film = movie.data
-                this.setState( {
-                    film
-                } )
+                this.setState( { film } )
             } )
     }
 
@@ -28,7 +26,9 @@ export default class Reviews extends Component {
                 <NavLink to={`/movies/${film.id}`}> Go Back </NavLink>
                 <div className={Styles.infoWrap}>
                     <h2 className={Styles.infoWrapTitle}>Tagline: {film.tagline}</h2>
-                    <img className={Styles.infoWrapImg} src={`${IMG_URL}${film.backdrop_path}`} alt="" />
+                    <img className={Styles.infoWrapImg}
+                        src={`${IMG_URL}${film.backdrop_path}`}
+                        alt="" />
                     <div className={Styles.infoWrapOverview}>
                         <p>{film.overview}</p>
                     </div>
