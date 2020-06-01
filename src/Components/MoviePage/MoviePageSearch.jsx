@@ -54,9 +54,11 @@ export default class MoviePageSearch extends Component {
                         this.state.film.map( film => {
                             return (
                                 <li className={Styles.searchListItem} key={shortId.generate()}>
-                                    <h3 >{film.original_title}</h3>
-                                    <img className={Styles.searchImg} src={film.poster_path !== null ? `${IMG_URL}${film.poster_path}` : `${defaultPoster}`} alt="" />
-                                    <p>{film.overview}</p>
+                                    <NavLink to={`/movies/${film.id}`}>
+                                        <h3 >{film.original_title}</h3>
+                                        <img className={Styles.searchImg} src={film.poster_path !== null ? `${IMG_URL}${film.poster_path}` : `${defaultPoster}`} alt="" />
+                                        <p>{film.overview}</p>
+                                    </NavLink>
                                 </li>
                             )
                         } )
