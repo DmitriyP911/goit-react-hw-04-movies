@@ -29,6 +29,16 @@
     height: 480px;
 }
 
+.reviewsStyle {
+    width: 100%;
+    text-align: center;
+}
+
+.castStyle {
+    text-align: center;
+    width: 100%;
+}
+
 .movieLinks {
     margin: 0 auto;
     width: 400px;

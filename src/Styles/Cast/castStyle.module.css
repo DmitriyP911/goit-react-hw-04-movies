@@ -18,16 +18,35 @@
 }
 
 .castGenres {
-    margin: 0 auto;
-    margin-top: 20px;
+    text-align: center;
+    font-size: 32px;
     color: tomato;
     font-weight: 700;
-    width: 480px;
+}
+
+.actorPhoto {
+    width: 80px;
+    height: 120px;
 }
 
 .castGenresList {
-    width: 400px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    justify-content: center;
+    list-style: none;
+}
+
+.actorName{
+    text-align: center;
+    width: 100%;
+}
+
+.castGenresListItem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 160px;
 }
 
 .castCompanies {

@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { getFilmInfo } from '../../Utils/getFilmInfo';
+import { getCastInfo } from '../../Utils/getFilmInfo';
 import Styles from '../../Styles/Cast/castStyle.module.css';
 import PropTypes from 'prop-types';
 
-const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
+const IMG_URL = 'https://image.tmdb.org/t/p/w500/'
 
 export default class Cast extends Component {
 
     state = {
         film: {},
-        genres: [],
-        prodCompanies: []
+        cast: []
     }
 
     static propTypes = {
         film: PropTypes.objectOf( PropTypes.string.isRequired ),
-        genres: PropTypes.arrayOf( PropTypes.shape( {
+        cast: PropTypes.arrayOf( PropTypes.shape( {
             id: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired
         } ) )
@@ -24,60 +23,35 @@ export default class Cast extends Component {
 
     componentDidMount () {
         const filmId = this.props.match.params.movieId;
-        getFilmInfo( filmId )
+        getCastInfo( filmId )
             .then( movie => {
                 const film = movie.data
+                console.log( film )
                 this.setState( {
-                    film: film,
-                    genres: [...film.genres],
-                    prodCompanies: [...film.production_companies]
+                    film,
+                    cast: [...film.cast]
                 } )
             } )
     }
 
     render () {
-        const { film, genres, prodCompanies } = this.state;
+        const { cast, film } = this.state;
         return (
             <div className={Styles.castWrap}>
                 <NavLink to={`/movies/${film.id}`}> Go Back </NavLink>
-                <h2 className={Styles.castTitle}>{film.original_title}</h2>
-                <img
-                    className={Styles.castPoster}
-                    src={`${IMG_URL}${film.backdrop_path}`}
-                    alt="" />
-                <h3 className={Styles.castGenres}>Genres:</h3>
+                <h3 className={Styles.castGenres}>Actors:</h3>
                 <ul className={Styles.castGenresList}>
                     {
-                        genres.map( genre => {
+                        cast.map( actor => {
                             return (
-                                <li key={genre.id}>
-                                    <p>{genre.name}</p>
+                                <li className={Styles.castGenresListItem} key={actor.id}>
+                                    <img className={Styles.actorPhoto} src={`${IMG_URL}${actor.profile_path}`} alt="" />
+                                    <p className={Styles.actorName}>{actor.name}</p>
                                 </li>
                             )
                         } )
                     }
                 </ul>
-                <h3 className={Styles.castCompanies}>Production Companies</h3>
-                <ul className={Styles.castCompaniesList}>
-                    {
-                        prodCompanies.map( company => {
-                            return (
-                                <li className={Styles.castCompaniesListItem}
-                                    key={company.id}>
-                                    <p>{company.name}</p>
-                                    {
-                                        company.logo_path !== null &&
-                                        <img
-                                            className={Styles.castCompaniesImg}
-                                            src={`${IMG_URL}${company.logo_path}`}
-                                            alt={company.name} />
-                                    }
-                                </li>
-                            )
-                        } )
-                    }
-                </ul>
-                <p className={Styles.release}><span>Release: </span>{film.release_date}</p>
             </div>
         )
     }

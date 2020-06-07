@@ -45,8 +45,8 @@ export default class MovieDetailsPage extends Component {
                         href={film.homepage}
                         target="_blank"
                         rel="noopener noreferrer">You can watch this movie in official cite</a>
-                    <NavLink to={`/movies/${film.id}/reviews`} >Get film information</NavLink>
-                    <NavLink to={`/movies/${film.id}/cast`} >Get production information</NavLink>
+                    <NavLink className={Styles.reviewsStyle} to={`/movies/${film.id}/reviews`} >Get reviews</NavLink>
+                    <NavLink className={Styles.castStyle} to={`/movies/${film.id}/cast`} >Get cast information</NavLink>
                 </div>
             </div>
         )
