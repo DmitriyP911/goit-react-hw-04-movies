@@ -56,7 +56,7 @@ export default class MoviePageSearch extends Component {
                         value={this.state.query} />
                 </form>
                 <ul className={Styles.searchList}>
-                    {!!this.state.film.length && this.state.query !== "" ?
+                    {
                         this.state.film.map( film => {
                             return (
                                 <li className={Styles.searchListItem}
@@ -72,8 +72,6 @@ export default class MoviePageSearch extends Component {
                                 </li>
                             )
                         } )
-                        :
-                        <NotFound />
                     }
                 </ul>
             </div>
