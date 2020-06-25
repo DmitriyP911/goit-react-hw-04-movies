@@ -18,9 +18,9 @@ const AsyncMoviePage = lazy( () =>
     import( './MoviePage/MoviePage' )
 )
 
-const AsyncNotFound = lazy( () =>
-    import( './NotFound/NotFound' )
-)
+// const AsyncNotFound = lazy( () =>
+//     import( './NotFound/NotFound' )
+// )
 
 export default class App extends Component {
 
@@ -61,7 +61,7 @@ export default class App extends Component {
                     <Switch>
                         <Route path="/" exact component={HomePage} />
                         <Route path="/movies" component={AsyncMoviePage} />
-                        <Route path="/NotFound" component={AsyncNotFound} />
+                        {/* <Route path="/NotFound" component={AsyncNotFound} /> */}
                     </Switch>
                 </Suspense>
             </div >

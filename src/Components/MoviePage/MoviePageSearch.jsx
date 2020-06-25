@@ -3,7 +3,6 @@ import shortId from 'shortid';
 import { NavLink } from 'react-router-dom';
 import Styles from '../../Styles/MoviePage/moviePageNavStyle.module.css';
 import PropTypes from 'prop-types';
-import { NotFound } from '../NotFound/NotFound'
 
 import defaultPoster from '../../Images/cant-find-poster.jpg';
 import { searchData } from '../../Utils/getSearchData';
@@ -37,9 +36,20 @@ export default class MoviePageSearch extends Component {
         searchData( this.state.query )
             .then( response => {
                 this.setState( {
-                    film: response.data.results
+                    film: response.data.results,
                 } )
             } )
+    }
+
+    componentDidMount = () => {
+        if( this.props.location.prevQuery !== undefined ) {
+            searchData( this.props.location.prevQuery )
+                .then( response => {
+                    this.setState( {
+                        film: response.data.results,
+                    } )
+                } )
+        }
     }
 
     render () {
@@ -61,7 +71,10 @@ export default class MoviePageSearch extends Component {
                             return (
                                 <li className={Styles.searchListItem}
                                     key={shortId.generate()}>
-                                    <NavLink to={`/movies/${film.id}`}>
+                                    <NavLink to={{
+                                        pathname: `/movies/${film.id}`,
+                                        query: this.state.query
+                                    }}>
                                         <h3 >{film.original_title}</h3>
                                         <img
                                             className={Styles.searchImg}

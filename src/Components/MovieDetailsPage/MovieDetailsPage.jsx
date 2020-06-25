@@ -33,7 +33,6 @@ export default class MovieDetailsPage extends Component {
         getCastInfo( filmId )
             .then( movie => {
                 const film = movie.data
-                console.log( film )
                 this.setState( {
                     castArr: [...film.cast]
                 } )
@@ -71,9 +70,15 @@ export default class MovieDetailsPage extends Component {
 
     render () {
         const film = this.state.film;
+        const prevQuery = this.props.location.query
         return (
             <div>
-                <NavLink activeClassName={Styles.moviePageNav} to="/"> Home </NavLink>
+                <NavLink
+                    activeClassName={Styles.moviePageNav}
+                    to={{
+                        pathname: "/movies",
+                        prevQuery
+                    }}>Go to search page</NavLink>
                 <h2 className={Styles.movieTitle}>{film.original_title}</h2>
                 <img className={Styles.moviePoster}
                     src={`${IMG_URL}${film.poster_path}`}
