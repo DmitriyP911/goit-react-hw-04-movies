@@ -38,7 +38,10 @@ export default class HomePage extends Component {
                         popularFilms.map( film => {
                             return (
                                 <li className={Styles.homepageListItem} key={shortId.generate()}>
-                                    <NavLink activeClassName={Styles.navHover} to={`/movies/${film.id}`}>
+                                    <NavLink activeClassName={Styles.navHover} to={{
+                                        pathname: `/movies/${film.id}`,
+                                        path: this.props.location.pathname
+                                    }}>
                                         <img className={Styles.homepagePoster}
                                             src={`${IMG_URL}${film.poster_path}`}
                                             alt="" />

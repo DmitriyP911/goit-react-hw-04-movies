@@ -61,7 +61,6 @@ export default class App extends Component {
                     <Switch>
                         <Route path="/" exact component={HomePage} />
                         <Route path="/movies" component={AsyncMoviePage} />
-                        {/* <Route path="/NotFound" component={AsyncNotFound} /> */}
                     </Switch>
                 </Suspense>
             </div >

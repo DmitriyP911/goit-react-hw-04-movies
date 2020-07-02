@@ -76,9 +76,9 @@ export default class MovieDetailsPage extends Component {
                 <NavLink
                     activeClassName={Styles.moviePageNav}
                     to={{
-                        pathname: "/movies",
+                        pathname: this.props.location.path,
                         prevQuery
-                    }}>Go to search page</NavLink>
+                    }}>Go back</NavLink>
                 <h2 className={Styles.movieTitle}>{film.original_title}</h2>
                 <img className={Styles.moviePoster}
                     src={`${IMG_URL}${film.poster_path}`}

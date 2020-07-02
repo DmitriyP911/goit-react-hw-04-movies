@@ -73,7 +73,8 @@ export default class MoviePageSearch extends Component {
                                     key={shortId.generate()}>
                                     <NavLink to={{
                                         pathname: `/movies/${film.id}`,
-                                        query: this.state.query
+                                        query: this.state.query,
+                                        path: this.props.location.pathname
                                     }}>
                                         <h3 >{film.original_title}</h3>
                                         <img
